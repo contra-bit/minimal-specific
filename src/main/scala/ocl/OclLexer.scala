@@ -8,13 +8,7 @@ import scala.util.parsing.input.Reader
 
 object OclLexer extends OclLexer
 
-class OclLexer extends Lexical {
-
-    type Token = OclTokens.Token
-
-    val delimiters = OclTokens.delimiters
-
-
+class OclLexer extends Lexical with OclTokens {
     override def whitespace: Parser[Any] = (whitespaceChar).*
     override def token: Parser[Token] = (keyword | token)
 
@@ -51,6 +45,6 @@ class OclLexer extends Lexical {
 
     def pos: Position = NoPosition
     override def atEnd: Boolean = true
-    override def first = first
+    override def first = ???
   }
   }
