@@ -17,7 +17,7 @@ trait OclTokens extends Tokens {
 
   sealed abstract class Keyword(val chars: String) extends OclToken
 
-  abstract class Delimiter(val chars: String) extends OclTokens
+  abstract class Delimiter(val chars: String) extends OclToken
 
   case object AND extends Keyword("and")
 
